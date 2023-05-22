@@ -65,13 +65,13 @@ public class PlatformInteract : MonoBehaviour
         } else if(tag == "SpiritWood") {
              
             // platformer.enabled = false;
-             spriteChanger.ChangeSprite();
-             if (!platformer.spiritMode && !platformer.inCooldown) {
-                platformer.spiritMode = true;
-                curPlayer.layer = LayerMask.NameToLayer("Spirit");
-                Debug.Log("" + platformer.spiritMode);
-                newPlayer = Instantiate(playerPrefab, player.position, Quaternion.identity);
-             }
+            //  spriteChanger.ChangeSprite();
+            //  if (!platformer.spiritMode && !platformer.inCooldown) {
+            //     platformer.spiritMode = true;
+            //     curPlayer.layer = LayerMask.NameToLayer("Spirit");
+            //     newPlayer = Instantiate(playerPrefab, player.position, Quaternion.identity);
+            //     Debug.Log(newPlayer);
+             //}
              
             //  GameObject character = GameObject.FindGameObjectWithTag("Player");
             //  PlayerMovement playerMovement = character.GetComponent<PlayerMovement>();

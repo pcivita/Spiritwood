@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace TarodevController {
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController {
@@ -19,7 +20,8 @@ namespace TarodevController {
         public float checkRadius = 1f;
         public bool spiritMode;
         public bool inCooldown;
-        
+        public GameObject playerPrefab;
+        GameObject newPlayer;
 
         // END OF PEDRO VARIABLES
 
@@ -89,6 +91,7 @@ namespace TarodevController {
             _input = GetComponent<PlayerInput>();
             _cachedTriggerSetting = Physics2D.queriesHitTriggers;
             Physics2D.queriesStartInColliders = false;
+            _stats.PlayerLayer |= LayerMask.GetMask("Spirit");
 
             ToggleColliders(isStanding: true);
         }
@@ -96,31 +99,48 @@ namespace TarodevController {
         protected virtual void Update() {
 
             if ((UnityEngine.Input.GetKeyDown(KeyCode.E))) {
+
+            // First check if it hit something:
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
             hitSomething = false;
+
             if (hitColliders != null) {
+
                 foreach (var hitCollider in hitColliders) {
-                    Debug.Log(hitCollider.tag);
+                    // if it hit something that it can interact with:
                     if (hitCollider.gameObject != this.gameObject && tagsToCheck.Contains(hitCollider.tag)) {
                         hitSomething = true;
-                        Debug.Log(hitCollider.gameObject.name);
-                    //Debug.Log("Detected an object with one of the specified tags: " + hitCollider.gameObject.name);
-                    // TODO: INTERACT!!!!!!
+
+                    if (hitCollider.tag == "SpiritWood") {
+                        // platformer.enabled = false;
+                        spriteChanger.ChangeSprite();
+                        if (!spiritMode && !inCooldown) {
+                            spiritMode = true;
+                            Debug.Log("Change tAG");
+                            curPlayer.tag = "SpiritWood";
+                            newPlayer = Instantiate(playerPrefab, player.position, Quaternion.identity);
+                    }
+                    // TODO: INTERACT!!!!!
+                    }
                     break;  // exit the loop as we found a valid object
                     }
                 }
             }
             
+    
+            // Go back to body:
             if (spiritMode && !hitSomething) {
             GameObject body = GameObject.FindGameObjectWithTag("Body");
                 player.position = body.transform.position;
-                curPlayer.layer = LayerMask.NameToLayer("Human");
+                //curPlayer.layer = LayerMask.NameToLayer("Human");
+                //curPlayer.tag = "Untagged";
                 StartCoroutine(SetSpiritCooldown(3f));
                 spriteChanger.ChangeSprite();
                 spiritMode = false;
+
                 Destroy(body);
                 //StartCoroutine(SetSpiritCooldown(3f));
-                Debug.Log(body.transform.position);
+                //Debug.Log(body.transform.position);
                 //Vector3 currentPlayerPosition = body.transform.position;
                 //Debug.Log(currentPlayerPosition);
             }
@@ -235,7 +255,6 @@ namespace TarodevController {
 
             // Landed on the Ground
             if (!_grounded && _groundHitCount > 0) {
-                Debug.Log("Landed");
                 _grounded = true;
                 ResetDash();
                 ResetJump();

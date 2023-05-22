@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   ClimbableLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -36,12 +36,12 @@ MonoBehaviour:
   CrouchSlowdownFrames: 50
   CrouchBufferCheck: 0.01
   MaxAirJumps: 1
-  JumpPower: 31.5
+  JumpPower: 29.4
   MaxFallSpeed: 26
   FallAcceleration: 85
   JumpEndEarlyGravityModifier: 3
-  CoyoteFrames: 7
-  JumpBufferFrames: 7
+  CoyoteFrames: 2
+  JumpBufferFrames: -2
   AllowWalls: 1
   RequireInputPush: 0
   WallClimbSpeed: 5

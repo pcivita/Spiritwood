@@ -19,6 +19,8 @@ public class PlatformMovement : MonoBehaviour
     public LayerMask groundLayer;
     public SpriteChanger spriteChanger;
 
+
+
     private bool hitSomething;
 
     private Rigidbody2D rb;
@@ -39,10 +41,10 @@ public class PlatformMovement : MonoBehaviour
             hitSomething = false;
             if (hitColliders != null) {
                 foreach (var hitCollider in hitColliders) {
-                    Debug.Log(hitCollider.tag);
+                   // Debug.Log(hitCollider.tag);
                     if (hitCollider.gameObject != this.gameObject && tagsToCheck.Contains(hitCollider.tag)) {
                         hitSomething = true;
-                        Debug.Log(hitCollider.gameObject.name);
+                        //Debug.Log(hitCollider.gameObject.name);
                     //Debug.Log("Detected an object with one of the specified tags: " + hitCollider.gameObject.name);
                     // TODO: INTERACT!!!!!!
                     break;  // exit the loop as we found a valid object
@@ -59,7 +61,7 @@ public class PlatformMovement : MonoBehaviour
                 spiritMode = false;
                 Destroy(body);
                 //StartCoroutine(SetSpiritCooldown(3f));
-                Debug.Log(body.transform.position);
+               // Debug.Log(body.transform.position);
                 //Vector3 currentPlayerPosition = body.transform.position;
                 //Debug.Log(currentPlayerPosition);
             }
