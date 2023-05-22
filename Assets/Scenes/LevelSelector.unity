@@ -669,9 +669,9 @@ MonoBehaviour:
         your own.
     - name: Turtle
       sentences:
-      - 'Your mind is like water, my friend. '
-      - When it is agitated, it becomes difficult to see. But if you allow it to
-        settle, the answer becomes clear.
+      - Your mind is like water, my friend...
+      - When it is agitated, it becomes difficult to see....
+      - But if you allow it to settle, the answer becomes clear.
     - name: Turtle
       sentences:
       - 'Your mind is like water, my friend. '
@@ -728,6 +728,9 @@ MonoBehaviour:
   nameText: {fileID: 763963858}
   dialogueText: {fileID: 777989854}
   dialogueBox: {fileID: 1199779153}
+  Speed:
+    value: 0.05
+  inSentence: 0
   playerMovement: {fileID: 1760482932}
 --- !u!4 &486354279
 Transform:

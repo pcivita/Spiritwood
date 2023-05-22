@@ -3,25 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
     public GameObject dialogueBox;
     private Dialogue dialogue;
+    public FloatRef Speed;
+    
+    public bool inSentence = false;
 
     private Queue<string> sentences;
 
     public TopDownMovement playerMovement;
-
+   
     void Update() {
         if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space)) {
-            DisplayNextSentence();
+            if (inSentence) {
+                Speed.value = 0.01f;
+            } else {
+                DisplayNextSentence();
+            }
+           
         }
     }
     // Start is called before the first frame update
     void Start()
     {
+        Speed.value = 0.05f;
         sentences = new Queue<string>();
     }
 
@@ -52,19 +62,23 @@ public class DialogueManager : MonoBehaviour
             return;
         }
     string sentence = sentences.Dequeue();
-    // THis is if user tries to skip sentence
+    // This is if user tries to skip sentence
     StopAllCoroutines();
-    StartCoroutine(TypeSentence(sentence));
-
+    StartCoroutine(TypeSentence(sentence, Speed));
+    
     }
 
-    IEnumerator TypeSentence (string sentence) {
+    IEnumerator TypeSentence (string sentence, FloatRef speed) {
+        inSentence = true;
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray()) {
             dialogueText.text += letter;
+          //  Debug.Log(speed);
             // wait a frame;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(speed.value);
         }
+        speed.value = 0.05f;
+        inSentence = false;
 
     }
     
