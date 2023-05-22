@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public GameObject dialogueBox;
+    private Dialogue dialogue;
 
     private Queue<string> sentences;
 
@@ -24,18 +25,25 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue (Dialogue dialogue) {
+    public void StartDialogue (DialogueList dialogueList, int count) {
         playerMovement.movementEnabled = false;
         playerMovement.inConversation = true;
         dialogueBox.SetActive(true);
+        if (dialogueList.dialogues.Count == 1) {
+            dialogue = dialogueList.dialogues[0];
+        } else {
+            int index = Random.Range(0, dialogueList.dialogues.Count);
+            dialogue = dialogueList.dialogues[count % dialogueList.dialogues.Count];
+        }
         nameText.text = dialogue.name;
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences) {
             sentences.Enqueue(sentence);
         }
-
         DisplayNextSentence();
+  
+
     }
 
     public void DisplayNextSentence () {

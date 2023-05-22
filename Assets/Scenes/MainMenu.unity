@@ -1285,10 +1285,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueList:
     dialogues:
-    - name: SPIRIT
+    - name: Turtle
       sentences:
-      - The Prophecy is true!!!!!!!!!!!
-      - sdkfjhdg kufyhds
+      - So The Profecy is True
+      - He has returned!!!!!
 --- !u!114 &2090170262
 MonoBehaviour:
   m_ObjectHideFlags: 0

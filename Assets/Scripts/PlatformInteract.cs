@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TarodevController;
 
 public class PlatformInteract : MonoBehaviour
 {
@@ -10,11 +9,15 @@ public class PlatformInteract : MonoBehaviour
 
     public float interactionDistance = 3f;
 
-   public PlayerMovement platformer;
+   public PlatformMovement platformer;
 
    public SpriteChanger spriteChanger;
 
    public GameObject playerPrefab;
+
+   public GameObject curPlayer;
+
+   public GameObject toggle;
 
    GameObject newPlayer;
 
@@ -23,6 +26,10 @@ public class PlatformInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+       
+
+
         float distanceToPlayer = Vector3.Distance(player.position, transform.position);
 
         if (distanceToPlayer <= interactionDistance)
@@ -41,20 +48,22 @@ public class PlatformInteract : MonoBehaviour
         // If Level: Go to level scene.
         if (tag == "Level") {
         } else if(tag == "Animal") {
-            Debug.Log("ANIMALLLL " + gameObject.name);
         } else if(tag == "SpiritWood") {
              
             // platformer.enabled = false;
              spriteChanger.ChangeSprite();
              if (!platformer.spiritMode && !platformer.inCooldown) {
                 platformer.spiritMode = true;
-                Debug.Log("FUUUUUUCK" + platformer.spiritMode);
+                curPlayer.layer = LayerMask.NameToLayer("Spirit");
+                Debug.Log("" + platformer.spiritMode);
                 newPlayer = Instantiate(playerPrefab, player.position, Quaternion.identity);
              }
              
             //  GameObject character = GameObject.FindGameObjectWithTag("Player");
             //  PlayerMovement playerMovement = character.GetComponent<PlayerMovement>();
             // spiritwood.enabled = false;
+        }  else if (tag == "Toggle") {
+            toggle.SetActive(false);
         }
 
     }

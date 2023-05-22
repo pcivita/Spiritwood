@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class SpriteChanger : MonoBehaviour
 {
-    public Sprite newSprite;
+    public Sprite spiritSprite;
+    public Sprite humanSprite;
+    private PlatformMovement pm;
+
+    void Start () {
+         pm = GetComponent<PlatformMovement>();;
+    }
 
     public void ChangeSprite()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
+        if (!pm.spiritMode && !pm.inCooldown)
         {
-            spriteRenderer.sprite = newSprite;
+            spriteRenderer.sprite = spiritSprite;
+        } else {
+            Debug.Log("HUMAN!");
+             spriteRenderer.sprite = humanSprite;
         }
     }
 }
