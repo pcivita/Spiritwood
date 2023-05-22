@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TarodevController;
 
 public class PlatformInteract : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlatformInteract : MonoBehaviour
 
     public float interactionDistance = 3f;
 
-   public PlatformMovement platformer;
+   public PlayerController platformer;
 
    public SpriteChanger spriteChanger;
 
@@ -21,7 +22,15 @@ public class PlatformInteract : MonoBehaviour
 
    GameObject newPlayer;
 
-    
+
+   private Renderer rend; //the renderer of the object
+
+    private Color originalColor;
+
+    void Start() {
+        rend = GetComponent<Renderer>();
+        originalColor = rend.material.color;
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,11 +43,16 @@ public class PlatformInteract : MonoBehaviour
 
         if (distanceToPlayer <= interactionDistance)
         {
+            if (tag == "SpiritWood") {
+                 rend.material.color = Color.red;
+            } 
             if(Input.GetKeyDown(KeyCode.E))
             {
                 Interact();
             }
-        }
+        }else {
+                    rend.material.color = originalColor;
+            }
     }
 
     void Interact()

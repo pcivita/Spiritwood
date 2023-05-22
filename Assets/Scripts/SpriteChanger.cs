@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TarodevController;
 
 public class SpriteChanger : MonoBehaviour
 {
     public Sprite spiritSprite;
     public Sprite humanSprite;
-    private PlatformMovement pm;
+    private PlayerController pm;
 
     void Start () {
-         pm = GetComponent<PlatformMovement>();;
+         pm = GetComponent<PlayerController>();;
     }
 
     public void ChangeSprite()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (!pm.spiritMode && !pm.inCooldown)
         {
             spriteRenderer.sprite = spiritSprite;
