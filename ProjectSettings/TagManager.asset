@@ -8,6 +8,7 @@ TagManager:
   - Animal
   - SpiritWood
   - Body
+  - Toggle
   layers:
   - Default
   - TransparentFX
@@ -15,10 +16,10 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Spiritwood
+  - Human
+  - Spirit
+  - Toggled
   - 
   - 
   - 

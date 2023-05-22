@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5347510018102216609}
   - component: {fileID: 4061794985777882996}
   - component: {fileID: -6575780517337862118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CharPrefab 1
   m_TagString: Body
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6736964700935129517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
