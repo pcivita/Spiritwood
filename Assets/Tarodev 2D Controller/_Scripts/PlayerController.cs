@@ -117,7 +117,7 @@ namespace TarodevController {
                         if (!spiritMode && !inCooldown) {
                             spiritMode = true;
                             Debug.Log("Change tAG");
-                            curPlayer.tag = "SpiritWood";
+                            curPlayer.layer = LayerMask.NameToLayer("Spirit");
                             newPlayer = Instantiate(playerPrefab, player.position, Quaternion.identity);
                     }
                     // TODO: INTERACT!!!!!
@@ -132,7 +132,7 @@ namespace TarodevController {
             if (spiritMode && !hitSomething) {
             GameObject body = GameObject.FindGameObjectWithTag("Body");
                 player.position = body.transform.position;
-                //curPlayer.layer = LayerMask.NameToLayer("Human");
+                curPlayer.layer = LayerMask.NameToLayer("Human");
                 //curPlayer.tag = "Untagged";
                 StartCoroutine(SetSpiritCooldown(3f));
                 spriteChanger.ChangeSprite();
