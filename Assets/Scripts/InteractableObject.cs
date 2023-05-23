@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TarodevController;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -13,7 +12,6 @@ public class InteractableObject : MonoBehaviour
 
     public TopDownMovement playerMovement;
 
-   public PlayerMovement platformer;
     
 
     // Update is called once per frame
@@ -45,7 +43,7 @@ public class InteractableObject : MonoBehaviour
             dialogueTrigger.TriggerDialogue();
         } else if(tag == "SpiritWood") {
              Debug.Log("SPIRIT");
-             platformer.enabled = false;
+             //platformer.enabled = false;
             //  GameObject character = GameObject.FindGameObjectWithTag("Player");
             //  PlayerMovement playerMovement = character.GetComponent<PlayerMovement>();
             // spiritwood.enabled = false;

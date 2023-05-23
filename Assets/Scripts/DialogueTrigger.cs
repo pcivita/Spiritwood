@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Dialogue dialogue;
+    public DialogueList dialogueList;
+    private int count; 
 
     public void TriggerDialogue () {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        count++;
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogueList, count);
     }
 }

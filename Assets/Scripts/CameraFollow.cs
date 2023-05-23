@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public float FollowSpeed = 2f;
-    public float yOffset =1f;
+    public Vector3 offset;
+
     public Transform target;
+    public float damping;
+
+    private Vector3 velocity = Vector3.zero;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Vector3 newPos = new Vector3(target.position.x,target.position.y + yOffset,-10f);
-        transform.position = Vector3.Slerp(transform.position,newPos,FollowSpeed*Time.deltaTime);
+        Vector3 movePosition = target.position + offset;
+        transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, damping);
     }
 }
 
