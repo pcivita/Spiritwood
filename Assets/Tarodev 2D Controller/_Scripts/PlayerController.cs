@@ -518,7 +518,9 @@ namespace TarodevController {
             Jumped?.Invoke(false);
         }
 
+
         protected virtual void WallJump() {
+            Debug.Log("wall");
             _endedJumpEarly = false;
             _bufferedJumpUsable = false;
             if (_isOnWall) _isLeavingWall = true; // only toggle if it's a real WallJump, not CoyoteWallJump

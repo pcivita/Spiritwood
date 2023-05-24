@@ -32,7 +32,7 @@ MonoBehaviour:
   StickyFeetMultiplier: 1.55
   GrounderDistance: 0.139
   AllowCrouching: 0
-  CrouchSpeedPenalty: 0.5
+  CrouchSpeedPenalty: 0
   CrouchSlowdownFrames: 50
   CrouchBufferCheck: 0.01
   MaxAirJumps: 1
@@ -42,7 +42,7 @@ MonoBehaviour:
   JumpEndEarlyGravityModifier: 3
   CoyoteFrames: 2
   JumpBufferFrames: -2
-  AllowWalls: 1
+  AllowWalls: 0
   RequireInputPush: 0
   WallClimbSpeed: 5
   WallFallAcceleration: 8
