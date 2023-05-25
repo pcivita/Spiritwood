@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TarodevController;
 
 public class SpriteChanger : MonoBehaviour
 {
     public Sprite spiritSprite;
     public Sprite humanSprite;
-    private PlayerController pm;
+    private PlatformMovement pm;
 
     void Start () {
-         pm = GetComponent<PlayerController>();;
+         pm = GetComponent<PlatformMovement>();;
     }
 
     public void ChangeSprite()

@@ -77,9 +77,13 @@ public class PlatformInteract : MonoBehaviour
             //  PlayerMovement playerMovement = character.GetComponent<PlayerMovement>();
             // spiritwood.enabled = false;
         }  else if (tag == "Toggle") {
-            toggle.SetActive(false);
+            // toggle.SetActive(false);
         }
 
+    }
+
+    public void Toggle() {
+        toggle.SetActive(false);
     }
 
     public GameObject GetBody()

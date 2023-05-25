@@ -5,107 +5,134 @@ using System.Linq;
 
 public class PlatformMovement : MonoBehaviour
 {
+
+    public CharacterController2D controller;
+    public Animator animator;
+    float horizontalMove = 0f;
+    public float runSpeed = 40f;
+    bool jump = false;
+    //bool crouch = false;
+
+
+
+    // PEDRO VARIABLES:
     public Transform player;
     public GameObject curPlayer;
-    public float moveSpeed = 5f;
-    public float jumpForce = 5f;
-    private bool isJumping = false;
-    private bool isGrounded = false;
+    GameObject newPlayer;
+    public GameObject playerPrefab;
     public bool spiritMode = false;
     public bool inCooldown = false;
-
-    public Transform groundCheck;
-    public float groundCheckRadius;
-    public LayerMask groundLayer;
     public SpriteChanger spriteChanger;
+    private SpiritCollector collector;
+    private int waterLayer = 4;
 
-
-
+    // INTERACT VARIABLES:
     private bool hitSomething;
-
     private Rigidbody2D rb;
-
     public string[] tagsToCheck; // Set this to the tags you want to check in the Inspector
     public float checkRadius = 1f;
 
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody2D>();
+        collector = GetComponent<SpiritCollector>();
     }
 
-    void Update()
-    {
-        
-        if ((UnityEngine.Input.GetKeyDown(KeyCode.E))) {
-            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
+    void Update() {
+        //Debug.Log(collector.charges);
+        if (UnityEngine.Input.GetKeyDown(KeyCode.E)) {
+
+            CheckForInteraction();
+            // First Check if it hit something (TODO)
+            
+            if (!hitSomething) {
+            // Second check if in spiritMode:
+            if (spiritMode) {
+                    ReturnToBody();
+            }
+
+            // Third Check Charges:
+            if (collector.charges != 0 && !inCooldown) {
+                StartSpiritMode();
+            }
             hitSomething = false;
-            if (hitColliders != null) {
+            }
+           
+        }
+
+        // Movement!
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
+
+        if (Input.GetButtonDown("Jump")){
+            jump = true;
+            animator.SetBool("isJumping", true);
+        }
+
+    }
+
+    void CheckForInteraction() {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
+        hitSomething = false;
+        if (hitColliders != null) {
                 foreach (var hitCollider in hitColliders) {
-                   // Debug.Log(hitCollider.tag);
+                    // if it hit something that it can interact with:
                     if (hitCollider.gameObject != this.gameObject && tagsToCheck.Contains(hitCollider.tag)) {
                         hitSomething = true;
-                        //Debug.Log(hitCollider.gameObject.name);
-                    //Debug.Log("Detected an object with one of the specified tags: " + hitCollider.gameObject.name);
-                    // TODO: INTERACT!!!!!!
+
+                    if (hitCollider.tag == "Toggle") {
+                       
+                        Debug.Log("Toggle");
+                        hitCollider.gameObject.GetComponent<PlatformInteract>().Toggle();
+                        
+                        
+                    // TODO: INTERACT!!!!!
+                    }
                     break;  // exit the loop as we found a valid object
                     }
                 }
             }
-            
-            if (spiritMode && !hitSomething) {
-            GameObject body = GameObject.FindGameObjectWithTag("Body");
-                player.position = body.transform.position;
-                curPlayer.layer = LayerMask.NameToLayer("Human");
-                StartCoroutine(SetSpiritCooldown(3f));
-                spriteChanger.ChangeSprite();
-                spiritMode = false;
-                Destroy(body);
-                //StartCoroutine(SetSpiritCooldown(3f));
-               // Debug.Log(body.transform.position);
-                //Vector3 currentPlayerPosition = body.transform.position;
-                //Debug.Log(currentPlayerPosition);
-            }
-        }
-
-
-         
-        
-        
-
-
-
-       
-
-
-
-
-        float moveX = Input.GetAxis("Horizontal");
-
-        // Moving the player
-        rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
-
-        // Checking if player is on the ground
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
-
-        if(Input.GetButtonDown("Jump") && isGrounded)
-        {
-            isJumping = true;
-        }
-
-        if(isJumping == true)
-        {
-            rb.AddForce(new Vector2(0f, jumpForce));
-            isJumping = false;
-        }
+    }
+    void StartSpiritMode() {
+        // consume a charge:
+        collector.charges--;
+        Debug.Log("Consume " + collector.charges);
+        // go into spiritmode:
+        // TODO: MAKE SPIRIT ANIMATIONS
+        spiritMode = true;
+        controller.m_WhatIsGround &= ~(1 << waterLayer); 
+        curPlayer.layer = LayerMask.NameToLayer("Spirit");
+        newPlayer = Instantiate(playerPrefab, player.position, Quaternion.identity);
     }
 
 
-       private IEnumerator SetSpiritCooldown(float seconds) {
+    void ReturnToBody() {
+        //TODO: RETURN TO NON SPIRIT ANIMATIONS
+        GameObject body = GameObject.FindGameObjectWithTag("Body");
+        player.position = body.transform.position;
+        curPlayer.layer = LayerMask.NameToLayer("Human");
+        StartCoroutine(SetSpiritCooldown(0.5f));
+        controller.m_WhatIsGround |= (1 << waterLayer);
+        spiritMode = false;
+
+        Destroy(body);
+    }
+
+    private IEnumerator SetSpiritCooldown(float seconds) {
             inCooldown = true;
+            // TODO: SET COLOR.
             yield return new WaitForSeconds(seconds);
             inCooldown = false;
         }
 
+    
 
+
+    public void OnLanding() {
+        animator.SetBool("isJumping", false);
+    }
+    void FixedUpdate() {
+        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        jump = false;
+
+    }
 }

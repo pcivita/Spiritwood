@@ -21,7 +21,7 @@ namespace TarodevController {
         public bool spiritMode;
         public bool inCooldown;
         public bool left;
-         public bool landed;
+        public bool landed;
         public GameObject playerPrefab;
         GameObject newPlayer;
         
