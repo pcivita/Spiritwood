@@ -20,8 +20,11 @@ namespace TarodevController {
         public float checkRadius = 1f;
         public bool spiritMode;
         public bool inCooldown;
+        public bool left;
+        public bool landed;
         public GameObject playerPrefab;
         GameObject newPlayer;
+        
 
         // END OF PEDRO VARIABLES
 
@@ -37,7 +40,7 @@ namespace TarodevController {
         private bool _cachedTriggerSetting;
 
         protected FrameInput FrameInput;
-        private Vector2 _speed;
+        public Vector2 _speed;
         private Vector2 _currentExternalVelocity;
         private int _fixedFrame;
         private bool _hasControl = true;
@@ -206,12 +209,12 @@ namespace TarodevController {
         private readonly Collider2D[] _wallHits = new Collider2D[2];
         private readonly Collider2D[] _ladderHits = new Collider2D[2];
         private RaycastHit2D _hittingWall;
-        private int _groundHitCount;
+        public int _groundHitCount;
         private int _ceilingHitCount;
         private int _wallHitCount;
         private int _ladderHitCount;
         private int _frameLeftGrounded = int.MinValue;
-        private bool _grounded;
+        public bool _grounded;
         private Vector2 _skinWidth = new(0.02f, 0.02f); // Expose this?
 
         protected virtual void CheckCollisions() {
@@ -255,6 +258,12 @@ namespace TarodevController {
 
             // Landed on the Ground
             if (!_grounded && _groundHitCount > 0) {
+                /////
+                Debug.Log("Landed");
+                left = false;
+                landed = true;
+
+                /////
                 _grounded = true;
                 ResetDash();
                 ResetJump();
@@ -263,6 +272,11 @@ namespace TarodevController {
             }
             // Left the Ground
             else if (_grounded && _groundHitCount == 0) {
+                /////////////
+                Debug.Log("left");
+                left = true;
+                landed = false;
+                ///////////
                 _grounded = false;
                 _frameLeftGrounded = _fixedFrame;
                 GroundedChanged?.Invoke(false, 0);
@@ -518,7 +532,9 @@ namespace TarodevController {
             Jumped?.Invoke(false);
         }
 
+
         protected virtual void WallJump() {
+            Debug.Log("wall");
             _endedJumpEarly = false;
             _bufferedJumpUsable = false;
             if (_isOnWall) _isLeavingWall = true; // only toggle if it's a real WallJump, not CoyoteWallJump
@@ -620,10 +636,12 @@ namespace TarodevController {
         private bool _stickyFeet;
 
         protected virtual void HandleHorizontal() {
+
             if (_dashing) return;
 
             // Deceleration
             if (!HorizontalInputPressed) {
+                
                 var deceleration = _grounded ? _stats.GroundDeceleration * (_stickyFeet ? _stats.StickyFeetMultiplier : 1) : _stats.AirDeceleration;
                 _speed.x = Mathf.MoveTowards(_speed.x, 0, deceleration * Time.fixedDeltaTime);
             }
