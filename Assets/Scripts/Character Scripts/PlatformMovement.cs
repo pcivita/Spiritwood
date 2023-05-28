@@ -86,12 +86,16 @@ public class PlatformMovement : MonoBehaviour
                         
                         
                     // TODO: INTERACT!!!!!
+                    } else if (hitCollider.tag == "Animal") {
+                        DialogueTrigger dialogueTrigger = hitCollider.gameObject.GetComponent<DialogueTrigger>();
+                        dialogueTrigger.TriggerDialogue();
                     }
                     break;  // exit the loop as we found a valid object
                     }
                 }
             }
     }
+    
     void StartSpiritMode() {
         // consume a charge:
         collector.charges--;
@@ -99,6 +103,7 @@ public class PlatformMovement : MonoBehaviour
         // go into spiritmode:
         // TODO: MAKE SPIRIT ANIMATIONS
         spiritMode = true;
+        animator.SetBool("spiritmode", true);
         controller.m_WhatIsGround &= ~(1 << waterLayer); 
         curPlayer.layer = LayerMask.NameToLayer("Spirit");
         newPlayer = Instantiate(playerPrefab, player.position, Quaternion.identity);
@@ -113,7 +118,7 @@ public class PlatformMovement : MonoBehaviour
         StartCoroutine(SetSpiritCooldown(0.5f));
         controller.m_WhatIsGround |= (1 << waterLayer);
         spiritMode = false;
-
+        animator.SetBool("spiritmode", false);
         Destroy(body);
     }
 
