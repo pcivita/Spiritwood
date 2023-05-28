@@ -15,7 +15,8 @@ public class DialogueManager : MonoBehaviour
     public FloatRef Speed;
     
     public bool inSentence = false;
-
+    
+    private Queue<string> names;
     private Queue<string> sentences;
 
     public TopDownMovement playerMovement;
@@ -35,26 +36,54 @@ public class DialogueManager : MonoBehaviour
     {
         Speed.value = 0.05f;
         sentences = new Queue<string>();
+        names = new Queue<string>();
     }
 
     public void StartDialogue (DialogueList dialogueList, int count) {
         playerMovement.movementEnabled = false;
         playerMovement.inConversation = true;
-        dialogueBox.gameObject.SetActive(true);
-        if (dialogueList.dialogues.Count == 1) {
-            dialogue = dialogueList.dialogues[0];
-        } else {
-            int index = Random.Range(0, dialogueList.dialogues.Count);
-            dialogue = dialogueList.dialogues[count % dialogueList.dialogues.Count];
-        }
-        nameText.text = dialogue.name;
-        sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences) {
-            sentences.Enqueue(sentence);
+        dialogueBox.SetActive(true);
+
+        // First loading
+        if (count == 1) {
+            sentences.Clear();
+            names.Clear();
+            foreach (string sentence in dialogueList.dialogues[0].sentences) {
+                string[] subs = sentence.Split(':');
+                Debug.Log($"sentence: {sentence}");
+                Debug.Log($"subs length: {subs.Length}");
+                // silence
+                if (subs.Length == 1) {
+                    names.Enqueue("");
+                    sentences.Enqueue(sentence);
+                    Debug.Log($"Adding: {sentence}");
+                }
+                // someone talking
+                else {
+                    names.Enqueue(subs[0]);
+                    sentences.Enqueue(subs[1]);
+                    Debug.Log($"Adding: {subs[1]}");
+                }
+            }
+            Debug.Log($"sentences count: {sentences.Count}");
+            Debug.Log($"names count: {names.Count}");
+            DisplayNextSentence();
+        else {
+            if (dialogueList.dialogues.Count == 1) {
+                dialogue = dialogueList.dialogues[0];
+            } else {
+                int index = Random.Range(0, dialogueList.dialogues.Count);
+                dialogue = dialogueList.dialogues[count % dialogueList.dialogues.Count];
+            }
+            nameText.text = dialogue.name;
+            sentences.Clear();
+
+            foreach (string sentence in dialogue.sentences) {
+                sentences.Enqueue(sentence);
+            }
+            DisplayNextSentence();
         }
-        DisplayNextSentence();
-  
 
     }
 
@@ -63,11 +92,11 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-    string sentence = sentences.Dequeue();
-    // This is if user tries to skip sentence
-    StopAllCoroutines();
-    StartCoroutine(TypeSentence(sentence, Speed));
-    
+        string sentence = sentences.Dequeue();
+        nameText.text = names.Dequeue();
+        // This is if user tries to skip sentence
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence, Speed));
     }
 
     IEnumerator TypeSentence (string sentence, FloatRef speed) {
