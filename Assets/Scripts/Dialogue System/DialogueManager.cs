@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // TextMeshPro namespace
 
 
 public class DialogueManager : MonoBehaviour
 {
-    public Text nameText;
-    public Text dialogueText;
-    public GameObject dialogueBox;
+    public TextMeshProUGUI nameText;
+    //public Text dialogueText;
+     public TextMeshProUGUI dialogueText;
+    public Image dialogueBox;
     private Dialogue dialogue;
     public FloatRef Speed;
     
@@ -40,6 +42,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue (DialogueList dialogueList, int count) {
         playerMovement.movementEnabled = false;
         playerMovement.inConversation = true;
+
         dialogueBox.SetActive(true);
 
         // First loading
@@ -66,7 +69,6 @@ public class DialogueManager : MonoBehaviour
             Debug.Log($"sentences count: {sentences.Count}");
             Debug.Log($"names count: {names.Count}");
             DisplayNextSentence();
-        }
         else {
             if (dialogueList.dialogues.Count == 1) {
                 dialogue = dialogueList.dialogues[0];
@@ -114,7 +116,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue () {
         playerMovement.movementEnabled = true;
         playerMovement.inConversation = false;
-        dialogueBox.SetActive(false);
+        dialogueBox.gameObject.SetActive(false);
         Debug.Log("End of Convo");
     }
 

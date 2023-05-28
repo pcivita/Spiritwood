@@ -38,9 +38,9 @@ public class InteractableObject : MonoBehaviour
             SceneManager.LoadScene(sceneName);
         } else if(tag == "Animal") {
             Debug.Log("ANIMALLLL " + gameObject.name);
-            DialogueTrigger dialogueTrigger = GetComponent<DialogueTrigger>();
-            // Call the TriggerDialogue function
-            dialogueTrigger.TriggerDialogue();
+            // DialogueTrigger dialogueTrigger = GetComponent<DialogueTrigger>();
+            // // Call the TriggerDialogue function
+            // dialogueTrigger.TriggerDialogue();
         } else if(tag == "SpiritWood") {
              Debug.Log("SPIRIT");
              //platformer.enabled = false;
