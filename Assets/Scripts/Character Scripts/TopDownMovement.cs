@@ -8,6 +8,7 @@ public class TopDownMovement : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
+    public Animator animator;
 
     private bool hitSomething;
     public float checkRadius = 1f;
@@ -37,7 +38,9 @@ public class TopDownMovement : MonoBehaviour
 
         // Get the horizontal and vertical input (which will be -1, 0, or 1)
         movement.x = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("Hspeed", Mathf.Abs(movement.x));
         movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Vspeed", Mathf.Abs(movement.y));
     }
 
     // FixedUpdate is called once per physics update
