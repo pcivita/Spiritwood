@@ -1439,8 +1439,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 398, y: -44.7}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 455.5, y: -49.1}
+  m_SizeDelta: {x: 134.852, y: 53.405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &748852987
 MonoBehaviour:
@@ -1462,7 +1462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SPACE to Skip
+  m_text: SPACE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7f4e697e434c4f43a9e64110ee72a9d, type: 2}
   m_sharedMaterial: {fileID: 6840775546585503336, guid: b7f4e697e434c4f43a9e64110ee72a9d, type: 2}
@@ -1471,8 +1471,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1489,10 +1489,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.7
-  m_fontSizeBase: 13.4
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1525,7 +1525,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 37.650307, w: 27.13599}
+  m_margin: {x: 0, y: 4.5399456, z: 37.650307, w: 27.13599}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1551,7 +1551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74e54ea98686f447825d6234c68ad78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobbingSpeed: 0.5
+  bobbingSpeed: 19.98
   bobbingAmount: 0.5
 --- !u!1001 &888720677
 PrefabInstance:
@@ -1842,7 +1842,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Turtle
+  m_text: Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7f4e697e434c4f43a9e64110ee72a9d, type: 2}
   m_sharedMaterial: {fileID: 6840775546585503336, guid: b7f4e697e434c4f43a9e64110ee72a9d, type: 2}
@@ -1869,10 +1869,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 9.3
+  m_fontSize: 18.7
   m_fontSizeBase: 9.3
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2420,8 +2420,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.3, y: -11.202}
-  m_SizeDelta: {x: 930.595, y: 71.124}
+  m_AnchoredPosition: {x: -1.4385, y: -22.7}
+  m_SizeDelta: {x: 915.123, y: 73.187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997336028
 MonoBehaviour:
@@ -2443,7 +2443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SPACE to Skip
+  m_text: Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7f4e697e434c4f43a9e64110ee72a9d, type: 2}
   m_sharedMaterial: {fileID: 6840775546585503336, guid: b7f4e697e434c4f43a9e64110ee72a9d, type: 2}
@@ -2470,8 +2470,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.4
-  m_fontSizeBase: 16.4
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 14
@@ -2568,7 +2568,7 @@ PrefabInstance:
       objectReference: {fileID: 1760482932}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalScale.x
@@ -2622,5 +2622,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433135, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 1612526236}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
