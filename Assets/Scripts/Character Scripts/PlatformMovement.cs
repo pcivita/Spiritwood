@@ -102,6 +102,7 @@ public class PlatformMovement : MonoBehaviour
         Debug.Log("Consume " + collector.charges);
         // go into spiritmode:
         // TODO: MAKE SPIRIT ANIMATIONS
+        SoundManager.PlaySound("release_spirit");
         spiritMode = true;
         animator.SetBool("spiritmode", true);
         controller.m_WhatIsGround &= ~(1 << waterLayer); 
@@ -112,6 +113,7 @@ public class PlatformMovement : MonoBehaviour
 
     void ReturnToBody() {
         //TODO: RETURN TO NON SPIRIT ANIMATIONS
+        SoundManager.PlaySound("back_to_body");
         GameObject body = GameObject.FindGameObjectWithTag("Body");
         player.position = body.transform.position;
         curPlayer.layer = LayerMask.NameToLayer("Human");
