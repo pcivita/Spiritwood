@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     //public Text dialogueText;
-     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI dialogueText;
     public Image dialogueBox;
     private Dialogue dialogue;
     public FloatRef Speed;
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
         playerMovement.movementEnabled = false;
         playerMovement.inConversation = true;
 
-        dialogueBox.SetActive(true);
+        dialogueBox.gameObject.SetActive(true);
 
         // First loading
         if (count == 1) {
@@ -69,6 +69,7 @@ public class DialogueManager : MonoBehaviour
             Debug.Log($"sentences count: {sentences.Count}");
             Debug.Log($"names count: {names.Count}");
             DisplayNextSentence();
+        }
         else {
             if (dialogueList.dialogues.Count == 1) {
                 dialogue = dialogueList.dialogues[0];
