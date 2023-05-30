@@ -25,6 +25,8 @@ public class PlatformMovement : MonoBehaviour
     public SpriteChanger spriteChanger;
     private SpiritCollector collector;
     private int waterLayer = 4;
+    private int platformLayer = 10;
+    public GameObject spiritTint;
 
 
     public bool movementEnabled = true;
@@ -49,6 +51,7 @@ public class PlatformMovement : MonoBehaviour
             // First Check if it hit something (TODO)
             
             if (!hitSomething) {
+                Debug.Log(spiritMode);
             // Second check if in spiritMode:
             if (spiritMode) {
                     ReturnToBody();
@@ -64,13 +67,18 @@ public class PlatformMovement : MonoBehaviour
         }
 
         // Movement!
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
+        if (movementEnabled)
+        {
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump")){
-            jump = true;
-            animator.SetBool("isJumping", true);
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+                animator.SetBool("isJumping", true);
+            }
         }
+        
 
     }
 
@@ -110,9 +118,15 @@ public class PlatformMovement : MonoBehaviour
         Debug.Log("Consume " + collector.charges);
         // go into spiritmode:
         // TODO: MAKE SPIRIT ANIMATIONS
+<<<<<<< Updated upstream
+=======
+        SoundManager.PlaySound("release_spirit");
+        spiritTint.SetActive(true);
+>>>>>>> Stashed changes
         spiritMode = true;
         animator.SetBool("spiritmode", true);
-        controller.m_WhatIsGround &= ~(1 << waterLayer); 
+        controller.m_WhatIsGround &= ~(1 << waterLayer);
+        controller.m_WhatIsGround |= (1 << platformLayer);
         curPlayer.layer = LayerMask.NameToLayer("Spirit");
         newPlayer = Instantiate(playerPrefab, player.position, Quaternion.identity);
     }
@@ -122,9 +136,11 @@ public class PlatformMovement : MonoBehaviour
         //TODO: RETURN TO NON SPIRIT ANIMATIONS
         GameObject body = GameObject.FindGameObjectWithTag("Body");
         player.position = body.transform.position;
+        spiritTint.SetActive(false);
         curPlayer.layer = LayerMask.NameToLayer("Human");
         StartCoroutine(SetSpiritCooldown(0.5f));
         controller.m_WhatIsGround |= (1 << waterLayer);
+        controller.m_WhatIsGround &= ~(1 << platformLayer);
         spiritMode = false;
         animator.SetBool("spiritmode", false);
         Destroy(body);
