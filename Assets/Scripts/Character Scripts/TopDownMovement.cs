@@ -38,11 +38,10 @@ public class TopDownMovement : MonoBehaviour
 
         // Get the horizontal and vertical input (which will be -1, 0, or 1)
         movement.x = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("Hspeed", (movement.x));
         movement.y = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Vspeed", (movement.y));
+ 
 
-        animator.SetFloat("speed", movement.sqrMagnitude);
+
     }
 
     // FixedUpdate is called once per physics update
@@ -50,7 +49,10 @@ public class TopDownMovement : MonoBehaviour
     {
         // Move the character
         if (movementEnabled) {
-         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            animator.SetFloat("Hspeed", (movement.x));
+            animator.SetFloat("Vspeed", (movement.y));
+            animator.SetFloat("speed", movement.sqrMagnitude);
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
        
     }
