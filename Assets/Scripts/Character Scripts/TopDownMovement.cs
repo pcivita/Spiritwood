@@ -38,9 +38,10 @@ public class TopDownMovement : MonoBehaviour
 
         // Get the horizontal and vertical input (which will be -1, 0, or 1)
         movement.x = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("Hspeed", Mathf.Abs(movement.x));
         movement.y = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Vspeed", Mathf.Abs(movement.y));
+ 
+
+
     }
 
     // FixedUpdate is called once per physics update
@@ -48,7 +49,10 @@ public class TopDownMovement : MonoBehaviour
     {
         // Move the character
         if (movementEnabled) {
-         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            animator.SetFloat("Hspeed", (movement.x));
+            animator.SetFloat("Vspeed", (movement.y));
+            animator.SetFloat("speed", movement.sqrMagnitude);
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
        
     }
@@ -70,9 +74,11 @@ public class TopDownMovement : MonoBehaviour
                         
                         
                     // TODO: INTERACT!!!!!
-                    } else if (hitCollider.tag == "Animal") {
+                    } else if (hitCollider.tag == "Animal" && !inConversation) {
                         Debug.Log("Toggle");
                         DialogueTrigger dialogueTrigger = hitCollider.gameObject.GetComponent<DialogueTrigger>();
+                        TriggerE eTrigger = hitCollider.gameObject.GetComponent<TriggerE>();
+                        eTrigger.pressE.SetActive(false);
                         dialogueTrigger.TriggerDialogue();
                     }
                     break;  // exit the loop as we found a valid object

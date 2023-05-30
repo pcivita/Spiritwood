@@ -26,6 +26,10 @@ public class PlatformMovement : MonoBehaviour
     private SpiritCollector collector;
     private int waterLayer = 4;
 
+
+    public bool movementEnabled = true;
+    public bool inConversation = false;
+
     // INTERACT VARIABLES:
     private bool hitSomething;
     private Rigidbody2D rb;
@@ -71,10 +75,12 @@ public class PlatformMovement : MonoBehaviour
     }
 
     void CheckForInteraction() {
+        Debug.Log("Checking");
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
         hitSomething = false;
         if (hitColliders != null) {
                 foreach (var hitCollider in hitColliders) {
+                Debug.Log("collider: " + hitCollider.tag);
                     // if it hit something that it can interact with:
                     if (hitCollider.gameObject != this.gameObject && tagsToCheck.Contains(hitCollider.tag)) {
                         hitSomething = true;
@@ -86,10 +92,12 @@ public class PlatformMovement : MonoBehaviour
                         
                         
                     // TODO: INTERACT!!!!!
-                    } else if (hitCollider.tag == "Animal") {
-                        DialogueTrigger dialogueTrigger = hitCollider.gameObject.GetComponent<DialogueTrigger>();
+                    } else if (hitCollider.tag == "Animal" && !inConversation) {
+                        PlatformDialogueTrigger dialogueTrigger = hitCollider.gameObject.GetComponent<PlatformDialogueTrigger>();
+                        Debug.Log("Talk to turtle");
                         dialogueTrigger.TriggerDialogue();
                     }
+                    Debug.Log(hitCollider.tag);
                     break;  // exit the loop as we found a valid object
                     }
                 }

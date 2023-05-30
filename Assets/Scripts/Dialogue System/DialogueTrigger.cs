@@ -5,7 +5,8 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public DialogueList dialogueList;
-    private int count; 
+    private int count;
+
 
     public void TriggerDialogue () {
         count++;

@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
     void Update() {
         if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space)) {
             if (inSentence) {
-                Speed.value = 0.01f;
+                Speed.value = 0.01f; 
             } else {
                 DisplayNextSentence();
             }
