@@ -88,6 +88,7 @@ public class PlatformMovement : MonoBehaviour
                     if (hitCollider.tag == "Toggle") {
                        
                         Debug.Log("Toggle");
+                        SoundManager.PlaySound("switch");
                         hitCollider.gameObject.GetComponent<PlatformInteract>().Toggle();
                         
                         

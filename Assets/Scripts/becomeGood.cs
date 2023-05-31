@@ -12,7 +12,10 @@ private void OnTriggerEnter2D(Collider2D other)
           if (other.gameObject.layer == LayerMask.NameToLayer("Spirit"))
         {
             SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-             spriteRenderer.sprite = goodBunny;
+            if (spriteRenderer.sprite != goodBunny) {
+                SoundManager.PlaySound("not_evil");
+            }
+            spriteRenderer.sprite = goodBunny;
         }
     }
 }

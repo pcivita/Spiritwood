@@ -10,6 +10,7 @@ public class SpiritCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "SpiritWood") {
+            SoundManager.PlaySound("collect");
             Destroy(collision.gameObject);
             charges++;
             Debug.Log("got charge: " + charges);
