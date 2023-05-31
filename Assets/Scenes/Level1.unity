@@ -291,6 +291,8 @@ GameObject:
   - component: {fileID: 110029240}
   - component: {fileID: 110029239}
   - component: {fileID: 110029241}
+  - component: {fileID: 110029242}
+  - component: {fileID: 110029243}
   m_Layer: 4
   m_Name: SpiritDoor
   m_TagString: Finish
@@ -391,6 +393,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13219562, y: 0.85667443}
   m_EdgeRadius: 0
+--- !u!114 &110029242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110029238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee063e26417d4888a9a8852485ce4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 110029243}
+  pm: {fileID: 379856857}
+--- !u!95 &110029243
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110029238}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f43c0f4a0c80348bbacd88c7e01989dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &146431297
 GameObject:
   m_ObjectHideFlags: 0
@@ -3476,6 +3513,7 @@ GameObject:
   - component: {fileID: 1783042062}
   - component: {fileID: 1783042061}
   - component: {fileID: 1783042060}
+  - component: {fileID: 1783042063}
   m_Layer: 3
   m_Name: Platform (2)
   m_TagString: Untagged
@@ -3597,6 +3635,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1783042063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783042058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2adfd91522b424ca78322c82b3a20222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pm: {fileID: 379856857}
+  spriteRenderer: {fileID: 1783042062}
 --- !u!1 &1791155154
 GameObject:
   m_ObjectHideFlags: 0
@@ -4339,6 +4391,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3033280875983309624, guid: 2e2ccb01f248dbf45b731e6092160707, type: 3}
+      propertyPath: spiritTint
+      value: 
+      objectReference: {fileID: 181494019}
     - target: {fileID: 3033280875983309624, guid: 2e2ccb01f248dbf45b731e6092160707, type: 3}
       propertyPath: playerPrefab
       value: 

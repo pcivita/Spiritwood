@@ -1123,6 +1123,7 @@ MonoBehaviour:
       - (Silence.)
       - "Squirrel: Go talk to Master Wugui. I\u2019ll wait for you at the very beginning.
         Once you\u2019re inside, you\u2019ll get amazed."
+  cutscene: 0
 --- !u!114 &2090170262
 MonoBehaviour:
   m_ObjectHideFlags: 0
