@@ -7,6 +7,7 @@ public class becomeGood : MonoBehaviour
 {
     public Sprite goodBunny;
     private bool isGood = false;
+    public goToNext flag;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,6 +17,7 @@ public class becomeGood : MonoBehaviour
             SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             spriteRenderer.sprite = goodBunny;
             isGood = true;
+            flag.bunnyCount++;
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Human") && !isGood)
         {
