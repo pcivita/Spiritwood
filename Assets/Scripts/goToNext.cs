@@ -11,6 +11,8 @@ public class goToNext : MonoBehaviour
     public Transform playerPosition;
     public Transform cameraPosition;
 
+    private PlatformMovement pm;
+
 
     Color color;
     public SpriteRenderer spriteRenderer;
@@ -44,7 +46,8 @@ public class goToNext : MonoBehaviour
         }
     }
     private void OnTriggerStay2D(Collider2D collider) {
-         if (collider.CompareTag("Player") && bunnyCount == bunnyTotal)
+        pm = collider.GetComponent<PlatformMovement>();
+        if (collider.CompareTag("Player") && bunnyCount == bunnyTotal && !pm.spiritMode)
         {
            collider.transform.position = playerPosition.position;
            Camera.main.transform.Translate(0f, -41f, 0f);
