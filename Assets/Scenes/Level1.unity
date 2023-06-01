@@ -3325,10 +3325,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueList:
     dialogues:
-    - name: Amongus
+    - name: Master Wugui
       sentences:
-      - Eli is acting....
-      - SUS
+      - You may need that piece of SpiritWood to get through that wall...
+      - When in doubt, press E.
+      - Let your spirit talk to the bunny, restore peace...
 --- !u!1001 &1732289274
 PrefabInstance:
   m_ObjectHideFlags: 0
