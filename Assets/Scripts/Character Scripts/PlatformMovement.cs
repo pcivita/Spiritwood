@@ -105,6 +105,10 @@ public class PlatformMovement : MonoBehaviour
                         PlatformDialogueTrigger dialogueTrigger = hitCollider.gameObject.GetComponent<PlatformDialogueTrigger>();
                         Debug.Log("Talk to turtle");
                         dialogueTrigger.TriggerDialogue();
+                    } else if (hitCollider.tag == "PlatformToggle")
+                    {
+                        PlatformLever platformScript = hitCollider.gameObject.GetComponent<PlatformLever>();
+                        platformScript.makePermanent();
                     }
                     Debug.Log(hitCollider.tag);
                     break;  // exit the loop as we found a valid object

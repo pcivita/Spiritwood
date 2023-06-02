@@ -7,6 +7,7 @@ public class SpiritPlatform : MonoBehaviour
     public PlatformMovement pm;
     Color color;
     public SpriteRenderer spriteRenderer;
+    public bool alwaysOn = false;
 
 
     void Start()
@@ -26,7 +27,11 @@ public class SpiritPlatform : MonoBehaviour
 
     private void Update()
     {
-        if (pm.spiritMode)
+        Debug.Log(alwaysOn);
+        if (alwaysOn) {
+            color.a = 1f;
+            spriteRenderer.color = color;
+        } else if (pm.spiritMode)
         {
             color.a = 1f;
             spriteRenderer.color = color;
