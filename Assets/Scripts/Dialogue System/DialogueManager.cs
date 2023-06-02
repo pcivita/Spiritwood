@@ -48,13 +48,16 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueList dialogueList, int count, bool cutscene)
     {
-        if (cutscene)
-        {
-            performCutscene(dialogueList);
-        }
         playerMovement.movementEnabled = false;
         playerMovement.inConversation = true;
         dialogueBox.gameObject.SetActive(true);
+        Debug.Log(cutscene);
+        if (cutscene)
+        {
+            performCutscene(dialogueList);
+            DisplayNextSentence();
+            return;
+        }
         if (dialogueList.dialogues.Count == 1)
         {
             dialogue = dialogueList.dialogues[0];
@@ -70,6 +73,7 @@ public class DialogueManager : MonoBehaviour
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+            names.Enqueue(dialogue.name);
         }
         DisplayNextSentence();
 
@@ -80,6 +84,8 @@ public class DialogueManager : MonoBehaviour
     {
         sentences.Clear();
         names.Clear();
+        Debug.Log(dialogueList.dialogues[0]);
+        Debug.Log(dialogueList.dialogues[0].sentences.Length);
         foreach (string sentence in dialogueList.dialogues[0].sentences)
         {
             string[] subs = sentence.Split(':');
@@ -97,12 +103,12 @@ public class DialogueManager : MonoBehaviour
             {
                 names.Enqueue(subs[0]);
                 sentences.Enqueue(subs[1]);
-                Debug.Log($"Adding: {subs[1]}");
+                Debug.Log($"Adding name: {subs[0]}");
+                Debug.Log($"Adding sentence: {subs[1]}");
             }
         }
         Debug.Log($"sentences count: {sentences.Count}");
         Debug.Log($"names count: {names.Count}");
-        DisplayNextSentence();
     }
 
 
@@ -114,6 +120,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
+        nameText.text = names.Dequeue();
         // This is if user tries to skip sentence
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence, Speed));

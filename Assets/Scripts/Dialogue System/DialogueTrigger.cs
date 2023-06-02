@@ -6,11 +6,12 @@ public class DialogueTrigger : MonoBehaviour
 {
     public DialogueList dialogueList;
     private int count;
-    public bool cutscene = false;
+    public static bool cutscene = true;
 
 
     public void TriggerDialogue () {
         count++;
         FindObjectOfType<DialogueManager>().StartDialogue(dialogueList, count, cutscene);
+        cutscene = false;
     }
 }
