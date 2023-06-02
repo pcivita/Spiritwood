@@ -17,10 +17,11 @@ public class becomeGood : MonoBehaviour
             SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             if (spriteRenderer.sprite != goodBunny) {
                 SoundManager.PlaySound("not_evil");
+                spriteRenderer.sprite = goodBunny;
+                isGood = true;
+                flag.bunnyCount++;
             }
-            spriteRenderer.sprite = goodBunny;
-            isGood = true;
-            flag.bunnyCount++;
+            
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Human") && !isGood)
         {

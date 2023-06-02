@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class goToNext : MonoBehaviour
+public class endLevel : MonoBehaviour
 {
     public float playerX;
     public float playerY;
@@ -10,6 +11,7 @@ public class goToNext : MonoBehaviour
     public int bunnyTotal;
     public Transform playerPosition;
     public Transform cameraPosition;
+    public string levelToLoad;
 
     private PlatformMovement pm;
 
@@ -43,17 +45,16 @@ public class goToNext : MonoBehaviour
 
             // Set the updated color back to the sprite
             spriteRenderer.color = color;
-                }
+        }
     }
-    private void OnTriggerStay2D(Collider2D collider) {
+    private void OnTriggerStay2D(Collider2D collider)
+    {
         pm = collider.GetComponent<PlatformMovement>();
         if (collider.CompareTag("Player") && bunnyCount == bunnyTotal && !pm.spiritMode)
         {
-           collider.transform.position = playerPosition.position;
-            Camera.main.transform.position = cameraPosition.position;
+            SceneManager.LoadScene(levelToLoad);
         }
     }
 }
 
 
- 
