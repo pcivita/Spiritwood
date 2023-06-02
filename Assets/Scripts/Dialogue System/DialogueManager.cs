@@ -84,31 +84,22 @@ public class DialogueManager : MonoBehaviour
     {
         sentences.Clear();
         names.Clear();
-        Debug.Log(dialogueList.dialogues[0]);
-        Debug.Log(dialogueList.dialogues[0].sentences.Length);
         foreach (string sentence in dialogueList.dialogues[0].sentences)
         {
             string[] subs = sentence.Split(':');
-            Debug.Log($"sentence: {sentence}");
-            Debug.Log($"subs length: {subs.Length}");
             // silence
             if (subs.Length == 1)
             {
                 names.Enqueue("");
                 sentences.Enqueue(sentence);
-                Debug.Log($"Adding: {sentence}");
             }
             // someone talking
             else
             {
                 names.Enqueue(subs[0]);
                 sentences.Enqueue(subs[1]);
-                Debug.Log($"Adding name: {subs[0]}");
-                Debug.Log($"Adding sentence: {subs[1]}");
             }
         }
-        Debug.Log($"sentences count: {sentences.Count}");
-        Debug.Log($"names count: {names.Count}");
     }
 
 
