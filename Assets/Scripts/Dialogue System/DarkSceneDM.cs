@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro; // TextMeshPro namespace
+using UnityEngine.SceneManagement;
 
 
 public class DarkSceneDM : MonoBehaviour
@@ -45,6 +46,8 @@ public class DarkSceneDM : MonoBehaviour
         names = new Queue<string>();
         sentences.Clear();
         names.Clear();
+
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
 
         StartDialogue();
     }
@@ -101,6 +104,7 @@ public class DarkSceneDM : MonoBehaviour
     {
         dialogueBox.gameObject.SetActive(false);
         Debug.Log("End of Convo");
+        SceneManager.LoadScene(1);
     }
 
 
