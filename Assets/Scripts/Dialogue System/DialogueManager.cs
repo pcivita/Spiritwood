@@ -85,20 +85,22 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("in perform cutscene");
         sentences.Clear();
         names.Clear();
-        foreach (string sentence in dialogueList.dialogues[0].sentences)
-        {
-            string[] subs = sentence.Split(':');
-            // silence
-            if (subs.Length == 1)
+        foreach (Dialogue dialogue in dialogueList.dialogues) {
+            foreach (string sentence in dialogue.sentences)
             {
-                names.Enqueue("");
-                sentences.Enqueue(sentence);
-            }
-            // someone talking
-            else
-            {
-                names.Enqueue(subs[0]);
-                sentences.Enqueue(subs[1]);
+                string[] subs = sentence.Split(':');
+                // silence
+                if (subs.Length == 1)
+                {
+                    names.Enqueue(dialogue.name);
+                    sentences.Enqueue(sentence);
+                }
+                // someone talking
+                else
+                {
+                    names.Enqueue(subs[0]);
+                    sentences.Enqueue(subs[1]);
+                }
             }
         }
     }
