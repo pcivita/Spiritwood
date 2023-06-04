@@ -82,6 +82,7 @@ public class DialogueManager : MonoBehaviour
 
     void performCutscene(DialogueList dialogueList)
     {
+        Debug.Log("in perform cutscene");
         sentences.Clear();
         names.Clear();
         foreach (string sentence in dialogueList.dialogues[0].sentences)
