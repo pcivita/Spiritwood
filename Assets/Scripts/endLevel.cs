@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class endLevel : MonoBehaviour
 {
-    public float playerX;
-    public float playerY;
     public int bunnyCount;
     public int bunnyTotal;
     public Transform playerPosition;

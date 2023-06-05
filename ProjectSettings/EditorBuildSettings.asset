@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DarkScene.unity
     guid: 0a886d33ee8ea4bd28d8945d4c54ee1c
+  - enabled: 1
+    path: Assets/Scenes/PostTutorial.unity
+    guid: 5af563d9f6cd4724f800e6c143c5f0b5
   m_configObjects: {}
