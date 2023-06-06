@@ -14,6 +14,7 @@ public class PlatformMovement : MonoBehaviour
     //bool crouch = false;
          private TriggerE lastInteractedTriggerE = null;
 
+    private string[] checktags;
 
 
     // PEDRO VARIABLES:
@@ -93,13 +94,12 @@ public class PlatformMovement : MonoBehaviour
        void CheckForETrigger() {
     Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
     bool foundMatchingCollider = false;
-    string[] checktags;
-    foreach (var hitCollider in hitColliders) {
-        if (spiritMode) {
+    if (spiritMode) {
             checktags = SpiritTagsToCheck;
         } else {
             checktags = tagsToCheck;
         }
+    foreach (var hitCollider in hitColliders) {
         if (hitCollider.gameObject != this.gameObject && checktags.Contains(hitCollider.tag)) {
             foundMatchingCollider = true;
             hitSomething = true;
@@ -126,11 +126,16 @@ public class PlatformMovement : MonoBehaviour
     void CheckForInteraction() {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
         hitSomething = false;
+        if (spiritMode) {
+            checktags = SpiritTagsToCheck;
+        } else {
+            checktags = tagsToCheck;
+        }
         if (hitColliders != null) {
                 foreach (var hitCollider in hitColliders) {
                 Debug.Log("collider: " + hitCollider.tag);
                     // if it hit something that it can interact with:
-                    if (hitCollider.gameObject != this.gameObject && tagsToCheck.Contains(hitCollider.tag)) {
+                    if (hitCollider.gameObject != this.gameObject && checktags.Contains(hitCollider.tag)) {
                         hitSomething = true;
 
                     if (hitCollider.tag == "Toggle") {
@@ -148,7 +153,7 @@ public class PlatformMovement : MonoBehaviour
                     } else if (hitCollider.tag == "PlatformToggle" && spiritMode)
                     {
                         PlatformLever platformScript = hitCollider.gameObject.GetComponent<PlatformLever>();
-                        platformScript.makePermanent();
+                        platformScript.changeState();
                     }
                     Debug.Log(hitCollider.tag);
                     break;  // exit the loop as we found a valid object

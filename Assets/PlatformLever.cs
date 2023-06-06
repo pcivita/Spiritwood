@@ -8,9 +8,11 @@ public class PlatformLever : MonoBehaviour
     Color color;
     public SpriteRenderer spriteRenderer;
     public GameObject sPlatform;
+    public GameObject hPlatform;
     public Animator animator;
     public Animator leverAnimator;
     SpiritPlatform platformScript;
+    private bool right = true;
     
         void Start() {
         animator = sPlatform.GetComponent<Animator>();
@@ -30,12 +32,28 @@ public class PlatformLever : MonoBehaviour
     
     }
 
-    public void makePermanent()
+    public void changeState()
     {
-        platformScript.alwaysOn = true;
-        sPlatform.layer = LayerMask.NameToLayer("Ground");
-        animator.SetBool("alwaysOn", true);
-        leverAnimator.SetBool("toggled", true);
+        Debug.Log(right);
+        if (right) {
+            sPlatform.SetActive(false);
+            hPlatform.SetActive(true);
+
+            // platformScript.alwaysOn = true;
+            // sPlatform.layer = LayerMask.NameToLayer("Ground");
+            // animator.SetBool("alwaysOn", true);
+            leverAnimator.SetBool("toggled", true);
+        } else {
+            sPlatform.SetActive(true);
+            hPlatform.SetActive(false);
+
+            // platformScript.alwaysOn = true;
+            // sPlatform.layer = LayerMask.NameToLayer("Ground");
+            // animator.SetBool("alwaysOn", true);
+            leverAnimator.SetBool("toggled", false);
+        }
+        
+        right = !right;
 
     }
 

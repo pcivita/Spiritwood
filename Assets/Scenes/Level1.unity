@@ -154,9 +154,9 @@ Transform:
   - {fileID: 638240738}
   - {fileID: 33690510}
   - {fileID: 1783042059}
+  - {fileID: 1831026900}
   - {fileID: 153721098}
   - {fileID: 388152188}
-  - {fileID: 1831026900}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -576,7 +576,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 29820294}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &153721099
 BoxCollider2D:
@@ -1013,7 +1013,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 29820294}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &388152189
 BoxCollider2D:
@@ -2446,7 +2446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835400252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2, y: -41.5, z: -10}
+  m_LocalPosition: {x: -2.2, y: -41.15, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3036,7 +3036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1866801819688240275, guid: 6e462ec23902ed04292f824069d21d16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.13
+      value: -2.36
       objectReference: {fileID: 0}
     - target: {fileID: 1866801819688240275, guid: 6e462ec23902ed04292f824069d21d16, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3887,6 +3887,7 @@ MonoBehaviour:
   pm: {fileID: 379856857}
   spriteRenderer: {fileID: 1601711525}
   sPlatform: {fileID: 1783042058}
+  hPlatform: {fileID: 1831026899}
   animator: {fileID: 0}
   leverAnimator: {fileID: 1601711528}
 --- !u!212 &1601711525
@@ -4301,7 +4302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783042058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.38, y: -36.68, z: -0.19343384}
+  m_LocalPosition: {x: 8.38, y: -36.65, z: -0.19343384}
   m_LocalScale: {x: 2.484228, y: 2.600283, z: 6.367}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4518,12 +4519,12 @@ GameObject:
   - component: {fileID: 1831026902}
   - component: {fileID: 1831026901}
   m_Layer: 3
-  m_Name: Platform (8)
+  m_Name: Normal Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1831026900
 Transform:
   m_ObjectHideFlags: 0
@@ -4537,7 +4538,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 29820294}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1831026901
 BoxCollider2D:
@@ -5099,11 +5100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3033280875983309618, guid: 2e2ccb01f248dbf45b731e6092160707, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.51
+      value: -7.45
       objectReference: {fileID: 0}
     - target: {fileID: 3033280875983309618, guid: 2e2ccb01f248dbf45b731e6092160707, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -45.13
+      value: -45.06
       objectReference: {fileID: 0}
     - target: {fileID: 3033280875983309618, guid: 2e2ccb01f248dbf45b731e6092160707, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5203,11 +5204,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3033280875983309624, guid: 2e2ccb01f248dbf45b731e6092160707, type: 3}
       propertyPath: SpiritTagsToCheck.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3033280875983309624, guid: 2e2ccb01f248dbf45b731e6092160707, type: 3}
       propertyPath: SpiritTagsToCheck.Array.data[0]
       value: PlatformToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033280875983309624, guid: 2e2ccb01f248dbf45b731e6092160707, type: 3}
+      propertyPath: SpiritTagsToCheck.Array.data[1]
+      value: Toggle
       objectReference: {fileID: 0}
     - target: {fileID: 3033280875983309625, guid: 2e2ccb01f248dbf45b731e6092160707, type: 3}
       propertyPath: m_Name
