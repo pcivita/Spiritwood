@@ -27,7 +27,6 @@ public class SpiritPlatform : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(alwaysOn);
         if (alwaysOn) {
             color.a = 1f;
             spriteRenderer.color = color;
