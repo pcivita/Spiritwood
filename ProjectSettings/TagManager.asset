@@ -11,6 +11,7 @@ TagManager:
   - Toggle
   - Trigger
   - PlatformToggle
+  - HumanPlatformToggle
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Spirit
   - Toggled
   - Spirit Platform
-  - 
+  - HumanPlatform
   - 
   - 
   - 

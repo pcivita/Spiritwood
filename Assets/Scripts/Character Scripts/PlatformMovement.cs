@@ -27,7 +27,8 @@ public class PlatformMovement : MonoBehaviour
     public SpriteChanger spriteChanger;
     private SpiritCollector collector;
     private int waterLayer = 4;
-    private int platformLayer = 10;
+    private int SplatformLayer = 10;
+    private int HplatformLayer = 11;
     public GameObject spiritTint;
 
 
@@ -155,6 +156,13 @@ public class PlatformMovement : MonoBehaviour
                         PlatformLever platformScript = hitCollider.gameObject.GetComponent<PlatformLever>();
                         platformScript.changeState();
                     }
+
+                    else if (hitCollider.tag == "HumanPlatformToggle" && !spiritMode)
+                    {
+                        HumanPlatformLever platformScript = hitCollider.gameObject.GetComponent<HumanPlatformLever>();
+                        platformScript.changeState();
+                    }
+                    
                     Debug.Log(hitCollider.tag);
                     break;  // exit the loop as we found a valid object
                     }
@@ -173,7 +181,8 @@ public class PlatformMovement : MonoBehaviour
         spiritMode = true;
         animator.SetBool("spiritmode", true);
         controller.m_WhatIsGround &= ~(1 << waterLayer);
-        controller.m_WhatIsGround |= (1 << platformLayer);
+        controller.m_WhatIsGround |= (1 << SplatformLayer);
+        controller.m_WhatIsGround &= ~(1 << HplatformLayer);
         curPlayer.layer = LayerMask.NameToLayer("Spirit");
         newPlayer = Instantiate(playerPrefab, player.position, Quaternion.identity);
     }
@@ -188,7 +197,8 @@ public class PlatformMovement : MonoBehaviour
         curPlayer.layer = LayerMask.NameToLayer("Human");
         StartCoroutine(SetSpiritCooldown(0.5f));
         controller.m_WhatIsGround |= (1 << waterLayer);
-        controller.m_WhatIsGround &= ~(1 << platformLayer);
+        controller.m_WhatIsGround |= (1 << HplatformLayer);
+        controller.m_WhatIsGround &= ~(1 << SplatformLayer);
         spiritMode = false;
         animator.SetBool("spiritmode", false);
         Destroy(body);

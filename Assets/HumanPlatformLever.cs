@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformLever : MonoBehaviour
+public class HumanPlatformLever : MonoBehaviour
 {
     public PlatformMovement pm; 
     Color color;
@@ -41,9 +41,9 @@ public class PlatformLever : MonoBehaviour
          foreach (GameObject sPlatform in SpiritPlatforms)
         {
             if (right) {
-                 sPlatform.SetActive(false);
+                 sPlatform.SetActive(true);
             } else {
-            sPlatform.SetActive(true);
+            sPlatform.SetActive(false);
             }
 
         }
@@ -51,9 +51,9 @@ public class PlatformLever : MonoBehaviour
         foreach (GameObject hPlatform in HumanPlatforms)
         {
             if (right) {
-                  hPlatform.SetActive(true);
+                  hPlatform.SetActive(false);
             } else {
-            hPlatform.SetActive(false);
+                hPlatform.SetActive(true);
             }
         }
 
@@ -62,16 +62,17 @@ public class PlatformLever : MonoBehaviour
          right = !right;
     }
 
+
         private void Update()
      {
         if (pm.spiritMode)
         {
-            color.a = 1f;
+            color.a = 0.3f;
             spriteRenderer.color = color;
         }
         else
         {
-            color.a = 0.3f;
+            color.a = 1f;
             spriteRenderer.color = color;
         }
      }
