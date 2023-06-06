@@ -6,7 +6,7 @@ public class ImageScroller : MonoBehaviour
 {
     float speed = 20.0f;
     // float imagePosBegin = -1550.0f;
-    float boundaryTextEnd = 530.0f;
+    float boundaryTextEnd = 700.0f;
 
     RectTransform myGorectTransform;
 
