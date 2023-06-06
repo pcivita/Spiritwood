@@ -76,8 +76,8 @@ public class DialogueManager : MonoBehaviour
         {
             int index = Random.Range(0, dialogueList.dialogues.Count);
             dialogue = dialogueList.dialogues[count % dialogueList.dialogues.Count];
-
-            names.Enqueue(dialogue.name);
+            
+            names.Clear();
             sentences.Clear();
 
             foreach (string sentence in dialogue.sentences)

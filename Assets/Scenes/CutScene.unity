@@ -505,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].name
-      value: Squirrel
+      value: Bear
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[1].name
@@ -605,11 +605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 161
+      value: 131.4
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 61
+      value: 59.5
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.z
