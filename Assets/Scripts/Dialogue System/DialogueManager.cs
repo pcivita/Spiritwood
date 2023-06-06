@@ -46,35 +46,47 @@ public class DialogueManager : MonoBehaviour
         names.Clear();
     }
 
-    public void StartDialogue(DialogueList dialogueList, int count, bool cutscene)
+    public void StartDialogue(DialogueList dialogueList, int count)
     {
         playerMovement.movementEnabled = false;
         playerMovement.inConversation = true;
         dialogueBox.gameObject.SetActive(true);
-        Debug.Log(cutscene);
-        if (cutscene)
-        {
-            performCutscene(dialogueList);
-            DisplayNextSentence();
-            return;
-        }
         if (dialogueList.dialogues.Count == 1)
         {
             dialogue = dialogueList.dialogues[0];
+
+            foreach (string sentence in dialogue.sentences)
+            {
+                string[] subs = sentence.Split(':');
+                // silence
+                if (subs.Length == 1)
+                {
+                    names.Enqueue(dialogue.name);
+                    sentences.Enqueue(sentence);
+                }
+                // someone talking
+                else
+                {
+                    names.Enqueue(subs[0]);
+                    sentences.Enqueue(subs[1]);
+                }
+            }
         }
         else
         {
             int index = Random.Range(0, dialogueList.dialogues.Count);
             dialogue = dialogueList.dialogues[count % dialogueList.dialogues.Count];
-        }
-        nameText.text = dialogue.name;
-        sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
             names.Enqueue(dialogue.name);
+            sentences.Clear();
+
+            foreach (string sentence in dialogue.sentences)
+            {
+                sentences.Enqueue(sentence);
+                names.Enqueue(dialogue.name);
+            }
         }
+        
         DisplayNextSentence();
 
 
