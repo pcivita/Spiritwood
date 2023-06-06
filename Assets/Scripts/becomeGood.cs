@@ -8,6 +8,7 @@ public class becomeGood : MonoBehaviour
     public Sprite goodBunny;
     private bool isGood = false;
     public goToNext flag;
+    public endLevel levelEnder;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,6 +21,7 @@ public class becomeGood : MonoBehaviour
                 spriteRenderer.sprite = goodBunny;
                 isGood = true;
                 flag.bunnyCount++;
+                levelEnder.bunnyCount++;
             }
             
         }

@@ -12,6 +12,7 @@ public class PlatformMovement : MonoBehaviour
     public float runSpeed = 40f;
     bool jump = false;
     //bool crouch = false;
+         private TriggerE lastInteractedTriggerE = null;
 
 
 
@@ -44,6 +45,10 @@ public class PlatformMovement : MonoBehaviour
     }
 
     void Update() {
+
+        CheckForETrigger();
+
+
         //Debug.Log(collector.charges);
         if (UnityEngine.Input.GetKeyDown(KeyCode.E)) {
 
@@ -82,8 +87,35 @@ public class PlatformMovement : MonoBehaviour
 
     }
 
+       void CheckForETrigger() {
+    Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
+    bool foundMatchingCollider = false;
+
+    foreach (var hitCollider in hitColliders) {
+        if (hitCollider.gameObject != this.gameObject && tagsToCheck.Contains(hitCollider.tag)) {
+            foundMatchingCollider = true;
+            hitSomething = true;
+            if(lastInteractedTriggerE != null && lastInteractedTriggerE != hitCollider.gameObject.GetComponent<TriggerE>()) {
+                lastInteractedTriggerE.pressE.SetActive(false);
+            }
+            lastInteractedTriggerE = hitCollider.gameObject.GetComponent<TriggerE>();
+            if(lastInteractedTriggerE != null) {
+                lastInteractedTriggerE.pressE.SetActive(true);
+            }
+           
+            break;
+        }
+    }
+    
+    if (!foundMatchingCollider && lastInteractedTriggerE != null) {
+        lastInteractedTriggerE.pressE.SetActive(false);
+        lastInteractedTriggerE = null;
+    }
+}
+
+
+
     void CheckForInteraction() {
-        Debug.Log("Checking");
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
         hitSomething = false;
         if (hitColliders != null) {

@@ -1786,7 +1786,7 @@ GameObject:
   - component: {fileID: 687345081}
   - component: {fileID: 687345085}
   m_Layer: 0
-  m_Name: NextScreen (1)
+  m_Name: Level Ender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1888,7 +1888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bunnyCount: 0
-  bunnyTotal: 0
+  bunnyTotal: 2
   playerPosition: {fileID: 0}
   cameraPosition: {fileID: 0}
   levelToLoad: PostTutorial
@@ -2007,6 +2007,22 @@ PrefabInstance:
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433134, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Size.x
+      value: 0.42592365
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433134, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.42592365
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433134, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.016695658
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433134, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0059522446
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
@@ -2825,6 +2841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goodBunny: {fileID: -20435517, guid: 2caf695468cbd114dbc162635faf1076, type: 3}
   flag: {fileID: 0}
+  levelEnder: {fileID: 687345085}
 --- !u!212 &1102717284
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3259,6 +3276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goodBunny: {fileID: -20435517, guid: 2caf695468cbd114dbc162635faf1076, type: 3}
   flag: {fileID: 305555418}
+  levelEnder: {fileID: 687345085}
 --- !u!212 &1468437104
 SpriteRenderer:
   m_ObjectHideFlags: 0

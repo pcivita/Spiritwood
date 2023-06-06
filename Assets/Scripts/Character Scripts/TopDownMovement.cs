@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class TopDownMovement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TopDownMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
+     private TriggerE lastInteractedTriggerE = null;
 
     private bool hitSomething;
     public float checkRadius = 1f;
@@ -29,7 +31,7 @@ public class TopDownMovement : MonoBehaviour
     void Update()
     {
 
-     
+        CheckForETrigger();
 
         if (UnityEngine.Input.GetKeyDown(KeyCode.E)) {
             CheckForInteraction();
@@ -58,6 +60,35 @@ public class TopDownMovement : MonoBehaviour
     }
 
 
+        void CheckForETrigger() {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
+        hitSomething = false;
+  
+        if (hitColliders.Length > 0) {
+        foreach (var hitCollider in hitColliders) {
+            // if it hit something that it can interact with:
+            if (hitCollider.gameObject != this.gameObject && tagsToCheck.Contains(hitCollider.tag)) {
+                if(lastInteractedTriggerE != null && lastInteractedTriggerE != hitCollider.gameObject.GetComponent<TriggerE>()) {
+                    // Turn off the last interacted object
+                    lastInteractedTriggerE.pressE.SetActive(false);
+                }
+                
+                lastInteractedTriggerE = hitCollider.gameObject.GetComponent<TriggerE>();
+                lastInteractedTriggerE.pressE.SetActive(true);
+                
+                break;  // exit the loop as we found a valid object
+            }
+        }
+    } else if (lastInteractedTriggerE != null) {
+        // No colliders detected, turn off the last interacted object
+        lastInteractedTriggerE.pressE.SetActive(false);
+        lastInteractedTriggerE = null;
+    }
+    }
+
+
+
+
         void CheckForInteraction() {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
         hitSomething = false;
@@ -69,18 +100,20 @@ public class TopDownMovement : MonoBehaviour
 
                     if (hitCollider.tag == "Toggle") {
                        
-                        Debug.Log("Toggle");
                         hitCollider.gameObject.GetComponent<PlatformInteract>().Toggle();
                         
                         
                     // TODO: INTERACT!!!!!
                     } else if (hitCollider.tag == "Animal" && !inConversation) {
-                        Debug.Log("Toggle");
                         DialogueTrigger dialogueTrigger = hitCollider.gameObject.GetComponent<DialogueTrigger>();
                         TriggerE eTrigger = hitCollider.gameObject.GetComponent<TriggerE>();
                         eTrigger.pressE.SetActive(false);
                         dialogueTrigger.TriggerDialogue();
+                    } else if (hitCollider.tag == "Level") {
+                        InteractableObject intObj = hitCollider.gameObject.GetComponent<InteractableObject>();
+                        SceneManager.LoadScene(intObj.sceneName);
                     }
+                    
                     break;  // exit the loop as we found a valid object
                     }
                 }

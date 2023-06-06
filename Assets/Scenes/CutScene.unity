@@ -2235,6 +2235,22 @@ PrefabInstance:
       value: Nice to me you! :)
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Size.x
+      value: 0.23028766
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.11420117
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.028770573
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.07503431
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.32
       objectReference: {fileID: 0}
@@ -2304,6 +2320,7 @@ PrefabInstance:
       objectReference: {fileID: 1612526236}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 989735951140433135, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
 --- !u!4 &744989077 stripped
 Transform:
@@ -2484,6 +2501,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &993710223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993710209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94213978e5e7b6a4e9e88ffccf486d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressE: {fileID: 744989078}
 --- !u!1 &1046066063 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 989735951090364766, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
@@ -3547,6 +3577,7 @@ MonoBehaviour:
   checkRadius: 1
   tagsToCheck:
   - Animal
+  - Level
   inConversation: 0
   movementEnabled: 1
 --- !u!95 &1612526241
@@ -4072,7 +4103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_Size.x
-      value: 0.21341702
+      value: 0.19311467
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_Size.y
@@ -4080,11 +4111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_Offset.x
-      value: 0.02710545
+      value: 0.037256625
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_Offset.y
-      value: -0.005462341
+      value: -0.0054623485
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_RootOrder
@@ -4141,6 +4172,22 @@ PrefabInstance:
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433134, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Size.x
+      value: 0.21742365
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433134, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.39650038
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433134, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.03426024
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433134, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0059522437
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433135, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: movement

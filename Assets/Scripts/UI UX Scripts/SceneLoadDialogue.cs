@@ -38,7 +38,7 @@ public class SceneLoadDialogue : MonoBehaviour
     IEnumerator ExampleCoroutine()
     {
         // This will pause the coroutine execution for 3 seconds
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
 
         // After waiting for 3 seconds, this line will be executed
          DialogueTrigger dialogueTrigger = GetComponent<DialogueTrigger>();

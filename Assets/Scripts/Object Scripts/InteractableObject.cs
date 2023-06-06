@@ -17,16 +17,16 @@ public class InteractableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
+        // float distanceToPlayer = Vector3.Distance(player.position, transform.position);
 
-        if (distanceToPlayer <= interactionDistance)
-        {
-            if(Input.GetKeyDown(KeyCode.E) && !playerMovement.inConversation)
-            {
-                Debug.Log("Interacts");
-                Interact();
-            }
-        }
+        // if (distanceToPlayer <= interactionDistance)
+        // {
+        //     if(Input.GetKeyDown(KeyCode.E) && !playerMovement.inConversation)
+        //     {
+        //         Debug.Log("Interacts");
+        //         Interact();
+        //     }
+        // }
     }
 
     void Interact()
