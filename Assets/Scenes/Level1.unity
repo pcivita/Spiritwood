@@ -157,6 +157,9 @@ Transform:
   - {fileID: 153721098}
   - {fileID: 1313151218}
   - {fileID: 388152188}
+  - {fileID: 499226933}
+  - {fileID: 1061422408}
+  - {fileID: 1175185256}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1249,7 +1252,7 @@ GameObject:
   - component: {fileID: 499226930}
   - component: {fileID: 499226929}
   m_Layer: 10
-  m_Name: Spirit Platform
+  m_Name: Spirit Platform_first
   m_TagString: PlatformToggle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1377,12 +1380,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499226928}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7277, y: -2.16, z: 0}
+  m_LocalPosition: {x: 7.7635946, y: 2.6059935, z: -0.19343384}
   m_LocalScale: {x: 5.754719, y: 4.001831, z: 6.3669996}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_Father: {fileID: 29820294}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500192807
 GameObject:
@@ -2555,7 +2558,7 @@ GameObject:
   - component: {fileID: 1061422407}
   - component: {fileID: 1061422406}
   m_Layer: 11
-  m_Name: Normal Platform
+  m_Name: Normal Platform_first
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2647,12 +2650,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061422405}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6145, y: -2.2013, z: 0}
+  m_LocalPosition: {x: 7.650395, y: 2.5646937, z: -0.19343384}
   m_LocalScale: {x: 6.304842, y: 2.9315863, z: 6.3669996}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_Father: {fileID: 29820294}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1063658324
 PrefabInstance:
@@ -3151,7 +3154,7 @@ GameObject:
   - component: {fileID: 1175185252}
   - component: {fileID: 1175185251}
   m_Layer: 9
-  m_Name: PlatformLever (1)
+  m_Name: PlatformLever_first
   m_TagString: PlatformToggle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3296,14 +3299,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175185250}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.8758945, y: -4.4840016, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.911789, y: 0.28199196, z: -0.19343384}
   m_LocalScale: {x: 5.999091, y: 5.999091, z: 5.999091}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 319169588}
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_Father: {fileID: 29820294}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182523909
 GameObject:
