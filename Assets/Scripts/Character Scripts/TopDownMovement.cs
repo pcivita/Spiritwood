@@ -110,6 +110,7 @@ public class TopDownMovement : MonoBehaviour
                         eTrigger.pressE.SetActive(false);
                         dialogueTrigger.TriggerDialogue();
                     } else if (hitCollider.tag == "Level") {
+                        Debug.Log("Hit");
                         InteractableObject intObj = hitCollider.gameObject.GetComponent<InteractableObject>();
                         SceneManager.LoadScene(intObj.sceneName);
                     }
