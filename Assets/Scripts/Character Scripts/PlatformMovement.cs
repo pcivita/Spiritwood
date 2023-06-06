@@ -37,7 +37,10 @@ public class PlatformMovement : MonoBehaviour
     private bool hitSomething;
     private Rigidbody2D rb;
     public string[] tagsToCheck; // Set this to the tags you want to check in the Inspector
+    
     public float checkRadius = 1f;
+
+    public string[] SpiritTagsToCheck; // Set this to the tags you want to check in the Inspector
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -90,9 +93,14 @@ public class PlatformMovement : MonoBehaviour
        void CheckForETrigger() {
     Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
     bool foundMatchingCollider = false;
-
+    string[] checktags;
     foreach (var hitCollider in hitColliders) {
-        if (hitCollider.gameObject != this.gameObject && tagsToCheck.Contains(hitCollider.tag)) {
+        if (spiritMode) {
+            checktags = SpiritTagsToCheck;
+        } else {
+            checktags = tagsToCheck;
+        }
+        if (hitCollider.gameObject != this.gameObject && checktags.Contains(hitCollider.tag)) {
             foundMatchingCollider = true;
             hitSomething = true;
             if(lastInteractedTriggerE != null && lastInteractedTriggerE != hitCollider.gameObject.GetComponent<TriggerE>()) {
