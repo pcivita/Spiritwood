@@ -32,9 +32,10 @@ public class InteractableObject : MonoBehaviour
     void Interact()
     {
         // Implement your interaction code here
-       
+       Debug.Log(tag);
         // If Level: Go to level scene.
         if (tag == "Level") {
+            Debug.Log("in level");
             SceneManager.LoadScene(sceneName);
         } else if(tag == "Animal") {
             Debug.Log("ANIMALLLL " + gameObject.name);
