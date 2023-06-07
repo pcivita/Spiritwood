@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ImageScroller : MonoBehaviour
 {
-    float speed = 20.0f;
+    float speed = 30.0f;
     // float imagePosBegin = -1550.0f;
     float boundaryTextEnd = 900.0f;
 
