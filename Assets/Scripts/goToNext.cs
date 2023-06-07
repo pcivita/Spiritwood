@@ -33,7 +33,6 @@ public class goToNext : MonoBehaviour
 
     private void Update()
     {
-        pm = this.GetComponent<PlatformMovement>();
         if (bunnyCount == bunnyTotal)
         {
             // Set the alpha to 1 (full opacity)
@@ -47,6 +46,7 @@ public class goToNext : MonoBehaviour
         pm = collider.GetComponent<PlatformMovement>();
         if (collider.CompareTag("Player") && bunnyCount == bunnyTotal && !pm.spiritMode)
         {
+            SoundManager.PlaySound("flag_waving");
            collider.transform.position = playerPosition.position;
             Camera.main.transform.position = cameraPosition.position;
         }
