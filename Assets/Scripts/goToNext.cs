@@ -11,6 +11,7 @@ public class goToNext : MonoBehaviour
 
     public PlatformMovement pm;
 
+    private bool hasPlayedFlag = false;
 
     Color color;
     public SpriteRenderer spriteRenderer;
@@ -35,18 +36,21 @@ public class goToNext : MonoBehaviour
     {
         if (bunnyCount == bunnyTotal)
         {
+            if (!hasPlayedFlag) {
+                hasPlayedFlag = true;
+                SoundManager.PlaySound("flag_waving");
+            }
             // Set the alpha to 1 (full opacity)
             color.a = 1f;
 
             // Set the updated color back to the sprite
             spriteRenderer.color = color;
-                }
+        }
     }
     private void OnTriggerStay2D(Collider2D collider) {
         pm = collider.GetComponent<PlatformMovement>();
         if (collider.CompareTag("Player") && bunnyCount == bunnyTotal && !pm.spiritMode)
         {
-            SoundManager.PlaySound("flag_waving");
            collider.transform.position = playerPosition.position;
             Camera.main.transform.position = cameraPosition.position;
         }
