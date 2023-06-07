@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].name
@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[2].sentences.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[3].sentences.Array.size
@@ -289,11 +289,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[0]
-      value: "I\u2026 I can\u2019t believe it. You did it. Thank you, kid."
+      value: You must get stronger young one.
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[1]
-      value: You saved the forest! You saved my friends, my family!
+      value: 'Until then, the power of the Spirit Tree will be too much for you. '
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[2]
@@ -313,8 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[1].sentences.Array.data[0]
-      value: "My son is back! You saved my son! I shouldn\u2019t have doubted you,
-        kid. You did it. Thank you."
+      value: Gilbert, the warriors suck
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[1].sentences.Array.data[1]
@@ -667,11 +666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 166.1
+      value: 215.6
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 131.9
+      value: 154.8
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2293,11 +2292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 116
+      value: 379.7
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 141
+      value: 104.8
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3904,11 +3903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72
+      value: 103.4
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 158
+      value: 186.5
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4183,7 +4182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c677200a304cc984991a1a011abd560a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
+  moveSpeed: 60
   animator: {fileID: 1612526241}
   checkRadius: 1
   tagsToCheck:
@@ -4939,11 +4938,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 141
+      value: 259
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 178
+      value: 77.1
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433131, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_LocalPosition.z

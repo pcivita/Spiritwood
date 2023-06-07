@@ -158,18 +158,18 @@ MonoBehaviour:
     - name: Turtle
       sentences:
       - 'You: Where am I?'
-      - "Master Oogway: You\u2019ve come to the Spirit Woods. Only one human has
-        ever traversed this path before."
+      - "Master Oogway: You\u2019ve come to the Spirit Woods... It's been ages since
+        we've seen a human."
       - 'Bear: We need help!'
       - "Master Oogway: Hush! We\u2019ll get to that."
       - "You: Help? How could I help? I don\u2019t even know who I am!"
       - 'Snake: A long time ago, our forest was cursed by another human.'
-      - 'Snake: A warlock who had learned how to harness the power of Spirit Wood
-        to affect the souls of other beings, which no animal can do.'
-      - 'Bear: His curse brought half of our friends into the darkness, and now they
+      - 'Snake: A Warlock who had learned how to harness the power of Spirit Wood
+        to affect the souls of other beings,.'
+      - 'Bear: His curse brought half of our friends into darkness, and now they
         only seek power, chaos and destruction.'
-      - 'Master Oogway: It is your time, new human, to reverse the curse. Go to that
-        tree, see what it shows you.'
+      - 'Master Oogway: It is your time, new human, to reverse the curse. But first
+        you must get strong...'
 --- !u!114 &39151975
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class endLevel : MonoBehaviour
     public Transform cameraPosition;
     public string levelToLoad;
 
-    private PlatformMovement pm;
+    public PlatformMovement pm;
 
 
     Color color;
@@ -36,7 +36,7 @@ public class endLevel : MonoBehaviour
 
     private void Update()
     {
-        if (bunnyCount == bunnyTotal)
+        if (bunnyCount == bunnyTotal && !pm.spiritMode)
         {
             // Set the alpha to 1 (full opacity)
             color.a = 1f;

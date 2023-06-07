@@ -199,13 +199,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87806286}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 152.3, y: 154.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 79.192955, y: 80.50526, z: 14.874069}
   m_LocalScale: {x: 37.940277, y: 37.940277, z: 37.940277}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 2123988761}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &106107902 stripped
 GameObject:
@@ -527,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[1].sentences.Array.size
@@ -543,11 +543,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[0]
-      value: Thanks Mumu you're awake!
+      value: Mumu Is Awake!
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[1]
-      value: Go talk to bunny and parrot!
+      value: Today will be a great day
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[2]
@@ -1079,13 +1079,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524377478}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.6, y: 218, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.49295, y: 144.30527, z: 14.874069}
   m_LocalScale: {x: 37.940277, y: 37.940277, z: 37.940277}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 2123988761}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &530285778
 GameObject:
@@ -1789,7 +1789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[1].sentences.Array.size
@@ -1797,7 +1797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[0]
-      value: I remember when the warlock arrived, just like you. He was just as clueless,
+      value: I remember when the warlock arrived, just like you. He was clueless,
         and just as featherless!
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
@@ -1816,14 +1816,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[4]
+      value: But we all still live in fear that he will awaken.
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[5]
       value: 'Legend has it that the woods will lock away those with evil intent,
         should they abuse its power.
 
 '
-      objectReference: {fileID: 0}
-    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
-      propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[5]
-      value: But we all still live in fear that he will awaken.
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[1].sentences.Array.data[0]
@@ -2697,13 +2697,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089836898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 212.4, y: 225.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 139.29294, y: 152.00525, z: 14.874069}
   m_LocalScale: {x: 37.940277, y: 37.940277, z: 37.940277}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 2123988761}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1095187685 stripped
 MonoBehaviour:
@@ -3137,7 +3137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[1].sentences.Array.size
@@ -3157,11 +3157,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[1]
-      value: Go talk to bunny and parrot!
+      value: 'Legend has it that the woods will lock away those with evil intent,
+        should they abuse its power.
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[2]
-      value: But we all still live in fear that he will awaken.
+      value: 'But we all still live in fear that he will awaken.
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].sentences.Array.data[3]
@@ -3570,13 +3575,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407630721}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300, y: 304, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 226.89294, y: 230.30527, z: 14.874069}
   m_LocalScale: {x: 31.151403, y: 47.951176, z: 37.940277}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 2123988761}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1454093313
 PrefabInstance:
@@ -3913,13 +3918,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666675216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 204, y: 263, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 130.89294, y: 189.30527, z: 14.874069}
   m_LocalScale: {x: 37.940277, y: 37.940277, z: 37.940277}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 2123988761}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760482929
 GameObject:
@@ -4172,13 +4177,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836678546}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 325.3219, y: 212.1341, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 252.21484, y: 138.43936, z: 14.874069}
   m_LocalScale: {x: 31.151403, y: 47.951176, z: 37.940277}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 2123988761}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1997336028 stripped
 MonoBehaviour:
@@ -4267,13 +4272,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004418107}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 73, y: 288, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.107048035, y: 214.30527, z: 14.874069}
   m_LocalScale: {x: 37.940277, y: 37.940277, z: 37.940277}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 2123988761}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085540468 stripped
 GameObject:
@@ -4294,6 +4299,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bobbingSpeed: 10
   bobbingAmount: 0.02
+--- !u!1 &2123988760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123988761}
+  m_Layer: 0
+  m_Name: Leaves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2123988761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123988760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 73.10705, y: 73.69474, z: -14.874069}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1089836900}
+  - {fileID: 524377480}
+  - {fileID: 1836678548}
+  - {fileID: 2004418109}
+  - {fileID: 87806288}
+  - {fileID: 1666675218}
+  - {fileID: 1407630723}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &989735951220553667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4326,6 +4369,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1760482932}
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: dialogueList.dialogues.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[0].name
       value: Master Oogway
       objectReference: {fileID: 0}
@@ -4336,6 +4383,35 @@ PrefabInstance:
     - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: dialogueList.dialogues.Array.data[2].name
       value: Master Oogway
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: dialogueList.dialogues.Array.data[3].name
+      value: Master Oogway
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: dialogueList.dialogues.Array.data[1].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: dialogueList.dialogues.Array.data[3].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: dialogueList.dialogues.Array.data[1].sentences.Array.data[0]
+      value: I love bridges...
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: dialogueList.dialogues.Array.data[1].sentences.Array.data[1]
+      value: They remind me of the endless passage of time.
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: dialogueList.dialogues.Array.data[2].sentences.Array.data[0]
+      value: One often meets their destiny on the road they take to avoid it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 989735951140433129, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
+      propertyPath: dialogueList.dialogues.Array.data[3].sentences.Array.data[0]
+      value: The true path to victory is to find your opponent's weakness and make
+        it your own.
       objectReference: {fileID: 0}
     - target: {fileID: 989735951140433130, guid: 34625df35186b3942875a5f71e8d5af9, type: 3}
       propertyPath: m_Size.x

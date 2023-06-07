@@ -34,7 +34,7 @@ public class goToNext : MonoBehaviour
 
     private void Update()
     {
-        if (bunnyCount == bunnyTotal)
+        if (bunnyCount == bunnyTotal && !pm.spiritMode)
         {
             if (!hasPlayedFlag) {
                 hasPlayedFlag = true;
