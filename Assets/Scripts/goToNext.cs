@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class goToNext : MonoBehaviour
 {
-    public float playerX;
-    public float playerY;
     public int bunnyCount;
     public int bunnyTotal;
     public Transform playerPosition;
     public Transform cameraPosition;
 
-    private PlatformMovement pm;
+    public PlatformMovement pm;
 
 
     Color color;
@@ -36,7 +34,7 @@ public class goToNext : MonoBehaviour
 
     private void Update()
     {
-        if (bunnyCount == bunnyTotal)
+        if (bunnyCount == bunnyTotal && !pm.spiritMode)
         {
             // Set the alpha to 1 (full opacity)
             color.a = 1f;
