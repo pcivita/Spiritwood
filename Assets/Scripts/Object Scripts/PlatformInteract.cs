@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TarodevController;
+//using TarodevController;
 
 public class PlatformInteract : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class PlatformInteract : MonoBehaviour
 
     public float interactionDistance = 3f;
 
-   public PlayerController platformer;
+  // public PlayerController platformer;
 
    public SpriteChanger spriteChanger;
 
