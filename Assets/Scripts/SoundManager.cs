@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static AudioClip jumpSound, releaseSpiritSound, backSound;
-    public static AudioClip toBrightSound, collectSound, switchSound;
+    public static AudioClip toBrightSound, collectSound, switchSound, switchBackSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
 
         collectSound = Resources.Load<AudioClip> ("collect");
         switchSound = Resources.Load<AudioClip> ("switch");
+        switchBackSound = Resources.Load<AudioClip> ("switch_back");
         toBrightSound = Resources.Load<AudioClip> ("not evil");
 
         audioSrc = GetComponent<AudioSource> ();
@@ -47,6 +48,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "switch":
                 audioSrc.PlayOneShot(switchSound);
+                break;
+            case "switch_back":
+                audioSrc.PlayOneShot(switchBackSound);
                 break;
         }
     }

@@ -153,12 +153,14 @@ public class PlatformMovement : MonoBehaviour
                         dialogueTrigger.TriggerDialogue();
                     } else if (hitCollider.tag == "PlatformToggle" && spiritMode)
                     {
+                        SoundManager.PlaySound("switch_back");
                         PlatformLever platformScript = hitCollider.gameObject.GetComponent<PlatformLever>();
                         platformScript.changeState();
                     }
 
                     else if (hitCollider.tag == "HumanPlatformToggle" && !spiritMode)
                     {
+                        SoundManager.PlaySound("switch");
                         HumanPlatformLever platformScript = hitCollider.gameObject.GetComponent<HumanPlatformLever>();
                         platformScript.changeState();
                     }

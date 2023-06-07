@@ -28,13 +28,13 @@ public class goToNext : MonoBehaviour
 
         // Set the updated color back to the sprite
         spriteRenderer.color = color;
-
     }
 
 
     private void Update()
     {
-        if (bunnyCount == bunnyTotal && !pm.spiritMode)
+        pm = this.GetComponent<PlatformMovement>();
+        if (bunnyCount == bunnyTotal)
         {
             // Set the alpha to 1 (full opacity)
             color.a = 1f;

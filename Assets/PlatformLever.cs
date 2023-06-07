@@ -38,6 +38,7 @@ public class PlatformLever : MonoBehaviour
 
     public void changeState()
     {
+        
          foreach (GameObject sPlatform in SpiritPlatforms)
         {
             if (right) {
